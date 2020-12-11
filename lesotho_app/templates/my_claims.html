@@ -1,0 +1,124 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="zxx">
+
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="AutoMotive Template">
+    <meta name="keywords" content="AutoMotive, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lesotho Funeral Services</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/elegant-icons.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/nice-select.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/jquery-ui.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/slicknav.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
+</head>
+
+<body>
+        <!-- Header Section Begin -->
+    <header class="header">
+        <div class="header__top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-7">
+                        <ul class="header__top__left">
+                            <li><span class="icon_mobile"></span> (+266) 63 443 555</li>
+                            <li><span class="icon_clock_alt"></span> Mon-Sat: 10:00 - 16:00 / Sunday Close</li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="header__top__right">
+                            <a href="#" class="map-btn">Find us on map <span class="arrow_right"></span></a>
+                            <div class="header__right__social">
+                                <a href="#"><span class="social_facebook"></span></a>
+                                <a href="#"><span class="social_twitter"></span></a>
+                                <a href="#"><span class="social_instagram"></span></a>
+                                <a href="#"><img src="{% static 'img/whatsapp4.png' %}" alt=""></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="header__logo">
+                        <a href="{% url 'index' %}"><img src="{% static 'img/lesotho_funeral_logo.png' %}" alt=""></a>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <nav class="header__menu">
+                        <ul>
+                            <li class="active"><a href="{% url 'index' %}">Home</a></li>
+                            <li><a href="{% url 'claim' %}">Claims</a>
+                                <ul class="dropdown">
+                                    <li><a href="{% url 'claim' %}">Make a Claim</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Funeral Services</a>
+                                <ul class="dropdown">
+                                    <li><a href="#">Funeral Services</a></li>
+                                    <li><a href="#">Pre-Paid Funeral</a></li>
+                                    <li><a href="#">Pre-Arrangement</a></li>
+                                    <li><a href="#">Repatriations</a></li>
+                                    <li><a href="#">Tombstones</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Funeral Covers</a>
+                                <ul class="dropdown">
+                                    <li><a href="#">View your Policy</a></li>
+                                    <li><a href="#">Family Cover</a></li>
+                                    <li><a href="#">Single Cover</a></li>
+                                    <li><a href="#">Pensioners Cover</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Blog</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-lg-2">
+                    <ul class="header__right">
+                        <li><a href="#" class="search-switch"><span class="icon_search"></span></a></li>
+                        <li><a href="#"><span class="icon_cart_alt"></span></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="canvas__open">
+                <i class="fa fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+
+    <div class="claim"><br>
+        <h1>My Claim Details</h1>
+
+        {% for item in all %}
+            {{ item.claimant_title }} {{ item.claimant_first_name }} {{ item.claimant_last_name }}
+            <br>
+            Phone: {{ item.claimant_phone_number }} Policy:{{ item.claimant_policy_number }} Email:{{ item.claimant_email }}
+            <br>
+            ID Number: {{ item.claimant_id_number }} Passport Number:{{ item.claimant_passport_number }} Physical Address:{{ item.claimant_physical_address }}
+        {% endfor %}
+    </div>
+
+
+    </body>
+</html>>

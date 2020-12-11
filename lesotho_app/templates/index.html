@@ -1,0 +1,714 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="AutoMotive Template">
+    <meta name="keywords" content="AutoMotive, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lesotho Funeral Services</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/elegant-icons.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/nice-select.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/jquery-ui.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/slicknav.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
+</head>
+
+<body>
+    <!-- Page Preloder
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>-->
+
+    <!-- Offcanvas Menu Begin -->
+    <div class="offcanvas-menu-overlay"></div>
+    <div class="offcanvas-menu-wrapper">
+        <ul class="offcanvas__widget">
+            <li><a href="#" class="search-switch"><span class="icon_search"></span></a></li>
+            <li><a href="#"><span class="icon_cart_alt"></span></a></li>
+        </ul>
+        <div class="offcanvas__logo">
+            <a href="./index.html"><img src="{% static 'img/lesotho_funeral.jpg' %}" alt=""></a>
+        </div>
+        <div id="mobile-menu-wrap"></div>
+        <ul class="offcanvas__date">
+            <li><span class="icon_mobile"></span> (+266) 57 789 123</li>
+            <li><span class="icon_clock_alt"></span> Mon-Sat: 10:00 - 16:00 / Sunday Close</li>
+        </ul>
+        <div class="offcanvas__social">
+            <a href="#" class="map-btn">Find us on map <span class="arrow_right"></span></a>
+            <div class="header__right__social">
+                <a href="#"><span class="social_facebook"></span></a>
+                <a href="#"><span class="social_twitter"></span></a>
+                <a href="#"><span class="social_instagram"></span></a>
+                <a href="#"><img src="{% static 'img/whatsapp4.png' %}" alt=""></a>
+            </div>
+        </div>
+    </div>
+    <!-- Offcanvas Menu End -->
+
+    <!-- Header Section Begin -->
+    <header class="header">
+        <div class="header__top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-7">
+                        <ul class="header__top__left">
+                            <li><span class="icon_mobile"></span> (+266) 63 443 555</li>
+                            <li><span class="icon_clock_alt"></span> Mon-Sat: 10:00 - 16:00 / Sunday Close</li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="header__top__right">
+                            <a href="#" class="map-btn">Find us on map <span class="arrow_right"></span></a>
+                            <div class="header__right__social">
+                                <a href="#"><span class="social_facebook"></span></a>
+                                <a href="#"><span class="social_twitter"></span></a>
+                                <a href="#"><span class="social_instagram"></span></a>
+                                <a href="#"><img src="{% static 'img/whatsapp4.png' %}" alt=""></a>
+                            </div>
+                            <br>
+                            <br>
+                            {% if user.is_authenticated %}
+                                <a href="{% url 'logout' %}" class="map-btn">Log Out</a>
+                            {% else %}
+                                <a href="{% url 'login' %}" class="map-btn">Log In</a>
+                                <a href="{% url 'register' %}" class="map-btn">Register</a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="header__logo">
+                        <a href="{% url 'index' %}"><img src="{% static 'img/lesotho_funeral_logo.png' %}" alt=""></a>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <nav class="header__menu">
+                        <ul>
+                            <li class="active"><a href="{% url 'index' %}">Home</a></li>
+                            <li><a href="{% url 'claim' %}">Claims</a>
+                                <ul class="dropdown">
+                                    <li><a href="{% url 'claim' %}">Make a Claim</a></li>
+                                    <li><a href="{% url 'claims' %}">View your Claim History</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Funeral Services</a>
+                                <ul class="dropdown">
+                                    <li><a href="#">Funeral Services</a></li>
+                                    <li><a href="#">Pre-Paid Funeral</a></li>
+                                    <li><a href="#">Pre-Arrangement</a></li>
+                                    <li><a href="#">Repatriations</a></li>
+                                    <li><a href="#">Tombstones</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Funeral Covers</a>
+                                <ul class="dropdown">
+                                    <li><a href="#">View your Policy</a></li>
+                                    <li><a href="#">Family Cover</a></li>
+                                    <li><a href="#">Single Cover</a></li>
+                                    <li><a href="#">Pensioners Cover</a></li>
+                                </ul>
+                            </li>
+                            <!--<li><a href="./shop.html">Claims</a></li>
+                            <li><a href="#">Obituaries</a>
+                                <ul class="dropdown">
+                                    <li><a href="./obituary.html">How To Write Obituary</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="./promotions.html">Promotions</a></li>
+                            <li><a href="#">Pages</a>
+                                <ul class="dropdown">
+                                    <li><a href="./about.html">About Us</a></li>
+                                    <li><a href="./services-details.html">Services Details</a></li>
+                                    <li><a href="./shop-details.html">Shop Details</a></li>
+                                    <li><a href="./blog-details.html">Blog Details</a></li>
+                                    <li><a href="./contact.html">Contact</a></li>
+                                </ul>
+                            </li>-->
+                            <li><a href="#">Blog</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-lg-2">
+                    <ul class="header__right">
+                        <li><a href="#" class="search-switch"><span class="icon_search"></span></a></li>
+                        <li><a href="#"><span class="icon_cart_alt"></span></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="canvas__open">
+                <i class="fa fa-bars"></i>
+            </div>
+        </div>
+    </header>
+    <!-- Header Section End -->
+
+    <!-- Hero Section Begin -->
+    <!--<section class="hero spad set-bg" data-setbg="{% static 'img/back_g.jpg' %}">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="hero__text">
+                        <h2>
+                            <span>Welcome To</span>
+                            Lesotho Funeral Services
+                        </h2>
+                        <p>It is a long established fact that our services are the most prominent in the country</p>
+                        <a href="#" class="primary-btn">Our Services</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>-->
+    <!-- Hero Section End -->
+
+
+          <!-- Single Welcome Slide -->
+    <!--<section class="hero spad" >-->
+            <!--<div class="col-lg-12">-->
+    <div class="testimonial__slider owl-carousel">
+        <div class="welcome-welcome-slide bg-img bg-gradient-overlay jarallax" style="background-image: url({% static 'img/car-bg.jpg' %});">
+            <div class="container h-100">
+              <div class="row h-100 align-items-center">
+                <div class="col-12">
+                  <!-- Welcome Text -->
+                  <div class="welcome-text text-center">
+                    <h2 data-animation="fadeInUp" data-delay="100ms">Welcome to Lesotho Funeral Services </h2>
+                    <p data-animation="fadeInUp" data-delay="300ms">It is a long established fact that our services are the most prominent in the country. Contact us to find out what we have to
+                      offer you.</p>
+                    <div class="welcome-btn-group">
+                      <a href="#" class="btn dento-btn mx-2" data-animation="fadeInUp" data-delay="500ms">About Us</a>
+                      <a href="#" class="btn dento-btn mx-2 active" data-animation="fadeInUp" data-delay="700ms">Promotions</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+
+
+        <div class="welcome-welcome-slide bg-img bg-gradient-overlay jarallax" style="background-image: url({% static 'img/Basotho2.jpg' %});">
+            <div class="container h-100">
+              <div class="row h-100 align-items-center">
+                <div class="col-12">
+                  <!-- Welcome Text -->
+                  <div class="welcome-text text-center">
+                    <h2 data-animation="fadeInUp" data-delay="100ms">Welcome to Lesotho Funeral Services  </h2>
+                    <p data-animation="fadeInUp" data-delay="300ms">Our People Our Pride
+                      </p>
+                    <div class="welcome-btn-group">
+                      <a href="#" class="btn dento-btn mx-2" data-animation="fadeInUp" data-delay="500ms">About Us</a>
+                      <a href="#" class="btn dento-btn mx-2 active" data-animation="fadeInUp" data-delay="700ms">Promotions</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+
+        <div class="welcome-welcome-slide bg-img bg-gradient-overlay jarallax" style="background-image: url({% static 'img/person-bg.jpg' %});">
+            <div class="container h-100">
+              <div class="row h-100 align-items-center">
+                <div class="col-12">
+                  <!-- Welcome Text -->
+                  <div class="welcome-text text-center">
+                    <h2 data-animation="fadeInUp" data-delay="100ms">Welcome to Lesotho Funeral Services  </h2>
+                    <p data-animation="fadeInUp" data-delay="300ms">Your dignity is our priority
+                      </p>
+                    <div class="welcome-btn-group">
+                      <a href="#" class="btn dento-btn mx-2" data-animation="fadeInUp" data-delay="500ms">About Us</a>
+                      <a href="#" class="btn dento-btn mx-2 active" data-animation="fadeInUp" data-delay="700ms">Promotions</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+            <!--</div>-->
+    <!--</section>-->
+
+
+
+    <!-- Services Section Begin -->
+    <section class="services spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title">
+                        <h2>What We Do?</h2>
+                        <p>Tse re tummeng ka tsona.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 p-0 order-lg-1 col-md-6 order-md-1">
+                    <div class="services__text">
+                        <!--<img src="{% static 'img/icon/si-1.png' %}" alt="">-->
+                        <h4>Transport</h4>
+                        <p>Collection | Delivery | Transfers | Repatriation</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 p-0 order-lg-2 col-md-6 order-md-2">
+                    <div class="services__pic">
+                        <img src="{% static 'img/services/funeral_car.png' %}" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-3 p-0 order-lg-3 col-md-6 order-md-4">
+                    <div class="services__text">
+                        <!--<img src="{% static 'img/icon/si-2.png' %}" alt="">-->
+                        <h4>Burial Services</h4>
+                        <p>Visitations | Memorial-tributes | Traditional</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 p-0 order-lg-4 col-md-6 order-md-3">
+                    <div class="services__pic">
+                        <img src="{% static 'img/services/funeral_service.jpg' %}" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-3 p-0 order-lg-6 col-md-6 order-md-5">
+                    <div class="services__text">
+                        <!--<img src="{% static 'img/icon/si-3.png' %}" alt="">-->
+                        <h4>Mortuary</h4>
+                        <p>Security | Arrivals | Dispensation</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 p-0 order-lg-5 col-md-6 order-md-6">
+                    <div class="services__pic">
+                        <img src="{% static 'img/services/funeral_mortuary.jpg' %}" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-3 p-0 order-lg-8 col-md-6 order-md-8">
+                    <div class="services__text">
+                        <!--<img src="{% static 'img/icon/si-4.png' %}" alt="">-->
+                        <h4>Preneed</h4>
+                        <p>Insurance | Covers | Insured</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 p-0 order-lg-7 col-md-6 order-md-7">
+                    <div class="services__pic">
+                        <img src="{% static 'img/services/funeral_preneed.jpg' %}" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Services Section End -->
+
+    <!-- Chooseus Section Begin -->
+    <section class="chooseus">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="chooseus__pic set-bg" data-setbg="{% static 'img/service-bg.jpg' %}"></div>
+                <div class="col-lg-7 offset-lg-5 p-0">
+                    <div class="chooseus__text">
+                        <div class="section-title">
+                            <h2>We Have Over 20 Years<br /> Of Experience In Funeral Services</h2>
+                            <p>Re o Bolekela ka Boikarabello Bohle</p>
+                        </div>
+                        <ul>
+                            <li><span class="icon_check"></span> 1. This is our reputation as a company..
+                            .</li>
+                            <li><span class="icon_check"></span> 2. we have done....
+                            </li>
+                            <li><span class="icon_check"></span> 3. we have dane.....
+                            </li>
+                            <li><span class="icon_check"></span> 4. we have done....</li>
+                        </ul>
+                        <a href="#" class="primary-btn">About Us</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Chooseus Section End -->
+
+    <!-- Products Section Begin -->
+    <section class="products spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title">
+                        <h2>Our Top Products</h2>
+                        <p>The best products you can get in the country.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="product__item">
+                        <div class="product__item__pic">
+                            <img src="{% static 'img/products/funeral_service1.jpg' %}" alt="">
+                            <ul class="hover__item">
+                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                <li><a href="#"><i class="fa fa-eye"></i></a></li>
+                                <li><a href="#"><i class="fa fa-exchange"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="product__item__text">
+                            <h6><a href="#">Description</a></h6>
+                            <div class="price">
+                                <span>M0.00</span>
+                                <a href="#">+Add To Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="product__item">
+                        <div class="product__item__pic">
+                            <img src="{% static 'img/products/fneral_service2.jpg' %}" alt="">
+                            <ul class="hover__item">
+                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                <li><a href="#"><i class="fa fa-eye"></i></a></li>
+                                <li><a href="#"><i class="fa fa-exchange"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="product__item__text">
+                            <h6><a href="#">Description</a></h6>
+                            <div class="price">
+                                <span>M0.00</span>
+                                <a href="#">+Add To Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="product__item">
+                        <div class="product__item__pic">
+                            <img src="{% static 'img/products/funeral_service3.jpg' %}" alt="">
+                            <ul class="hover__item">
+                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                <li><a href="#"><i class="fa fa-eye"></i></a></li>
+                                <li><a href="#"><i class="fa fa-exchange"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="product__item__text">
+                            <h6><a href="#">Description</a></h6>
+                            <div class="price">
+                                <span>M0.00</span>
+                                <a href="#">+Add To Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="product__item">
+                        <div class="product__item__pic">
+                            <img src="{% static 'img/products/funeral_service5.jpg' %}" alt="">
+                            <ul class="hover__item">
+                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                <li><a href="#"><i class="fa fa-eye"></i></a></li>
+                                <li><a href="#"><i class="fa fa-exchange"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="product__item__text">
+                            <h6><a href="#">Description</a></h6>
+                            <div class="price">
+                                <span>M0.00</span>
+                                <a href="#">+Add To Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Products Section End -->
+
+    <!-- Testimonial Begin -->
+    <div class="testimonial">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="testimonial__slider owl-carousel">
+                        <div class="testimonial__item">
+                            <span class="icon_quotations"></span>
+                            <p>“A lot of service providers can talk a good game. Don't be fooled, look at the results. This is
+                            the only service provider that lives up to the hype.”</p>
+                        </div>
+                        <div class="testimonial__item">
+                            <span class="icon_quotations"></span>
+                            <p>“We have a track record for splendid delivery of services. You don't believe us,
+                            ask your neighbour.”</p>
+                        </div>
+                        <div class="testimonial__item">
+                            <span class="icon_quotations"></span>
+                            <p>“We have never had a single complaint about our services. We make sure your dignity
+                            is preserved and make things easy for you in the most difficult of times.”</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Testimonial End -->
+
+    <!-- Counter Section Begin -->
+    <section class="counter spad set-bg" data-setbg="{% static 'img/gold3.jpg' %}">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title">
+                        <h2>About Our Statistics</h2>
+                        <p>Our years experience is summarised in the stats below.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="counter__item">
+                        <div class="counter__item__icon">
+                            <img src="{% static 'img/icon/ci-1.png' %}" alt="">
+                        </div>
+                        <div class="counter__item__text">
+                            <h2 class="project-counter">560</h2>
+                            <strong>+</strong>
+                            <p>All Services</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="counter__item">
+                        <div class="counter__item__icon">
+                            <img src="{% static 'img/icon/ci-2.png' %}" alt="">
+                        </div>
+                        <div class="counter__item__text">
+                            <h2 class="project-counter">560</h2>
+                            <strong>+</strong>
+                            <p>Services Completed</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="counter__item">
+                        <div class="counter__item__icon">
+                            <img src="{% static 'img/icon/ci-3.png' %}" alt="">
+                        </div>
+                        <div class="counter__item__text">
+                            <h2 class="project-counter">560</h2>
+                            <strong>+</strong>
+                            <p>Customers Action</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="counter__item">
+                        <div class="counter__item__icon">
+                            <img src="{% static 'img/icon/ci-4.png' %}" alt="">
+                        </div>
+                        <div class="counter__item__text">
+                            <h2 class="project-counter">560</h2>
+                            <strong>+</strong>
+                            <p>Awards Winner</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Counter Section End -->
+
+    <!-- Latest News Begin -->
+    <section class="latest spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title">
+                        <h2>Latest News</h2>
+                        <p>Our monthly updates of our services and general news in the insurance industry.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="latest__item">
+                        <div class="latest__item__pic set-bg" data-setbg="{% static 'img/blog/funeral_cover_cost.jpg' %}">
+                            <p>By <span>Pule Phike on April 1, 2020</span></p>
+                        </div>
+                        <div class="latest__item__text">
+                            <h4><a href="#">Best premiums to consider in your 20s</a></h4>
+                            <p>Life is unpredictable, make sure you start insuring yourself as early as possible</p>
+                            <a href="#" class="continue-btn">Continue Reading</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="latest__item">
+                        <div class="latest__item__pic set-bg" data-setbg="{% static 'img/blog/funeral_payment_steps.jpg' %}">
+                            <p>By <span>Thabo Phoka on May 1, 2020</span></p>
+                        </div>
+                        <div class="latest__item__text">
+                            <h4><a href="#">Pay by M-pesa or Ecocash</a></h4>
+                            <p>Payments are made easy through M-pesa or Ecocash. This is made through easy steps on your phone</p>
+                            <a href="#" class="continue-btn">Continue Reading</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="latest__item">
+                        <div class="latest__item__pic set-bg" data-setbg="{% static 'img/blog/funeral_cvid_prev.jpg' %}">
+                            <p>By <span>Sikelele Molapo on June 1, 2020</span></p>
+                        </div>
+                        <div class="latest__item__text">
+                            <h4><a href="#">Thibelo ea COVID-19</a></h4>
+                            <p>Methati ea ho thibela COVID-19 e bohlokoa. Latela methati ena hore o itlhokomele ho
+                                qoba ts'oaetso ea lefu lena</p>
+                            <a href="#" class="continue-btn">Continue Reading</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Latest News End -->
+
+    <!-- Footer Section Begin -->
+    <footer class="footer set-bg" data-setbg="{% static 'img/marron_gold_bg.jpg' %}">
+        <div class="container">
+            <div class="footer__top">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="footer__top__item">
+                            <div class="footer__top__item__text">
+                                <img src="{% static 'img/icon/ft-1.png' %}" alt="">
+                                <p>Taking a Tour</p>
+                                <h3>Appointment</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="footer__top__item">
+                            <div class="footer__top__item__text">
+                                <img src="{% static 'img/icon/ft-2.png' %}" alt="">
+                                <p>Contact Us Now!</p>
+                                <h3>(+266) 5848 5694</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="footer__top__item last__item">
+                            <div class="footer__top__item__text">
+                                <img src="{% static 'img/icon/ft-3.png' %}" alt="">
+                                <p>Location</p>
+                                <h3>Find us on map</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__text">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="footer__about">
+                            <div class="footer__logo">
+                                <img src="{% static 'img/funeral_logo.png' %}" alt="">
+                            </div>
+                            <p>Re se belitse ka bokhabane ho feta lilemo tse 20 kao fela
+                            yoga to is also likely to be</p>
+                            <a href="#" class="primary-btn"><span class="icon_phone"></span> Contact Us</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 offset-lg-1 col-md-5 offset-md-1 col-sm-6">
+                        <div class="footer__widget">
+                            <h5>Quick Link</h5>
+                            <ul>
+                                <li><a href="#">Claims <span class="arrow_right"></span></a></li>
+                                <li><a href="#">Payment <span class="arrow_right"></span></a></li>
+                                <li><a href="#">Delivery <span class="arrow_right"></span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="footer__address">
+                            <h5>Our Offices</h5>
+                            <p>Address: Hlotse. Leribe, Lesotho</p>
+                            <p>Address: Maseru. Mpilo Rd, Lesotho</p>
+                            <p>Address: Mafeteng. Mafeteng, Lesotho</p>
+                            <ul>
+                                <li>Mobile: (+266) 5848 5694</li>
+                                <li>Email: info@lfs.co.ls</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="footer__address">
+                            <h5></h5>
+                            <p>Address: Qacha. Qacha's Neck, Lesotho</p>
+                            <p>Address: Mohale'shoek. Lesotho</p>
+                            <p>Address: Botha-Bothe. Botha-Bothe, Lesotho</p>
+                            <ul>
+                                <li>Mobile: (+266) 5848 5694</li>
+                                <li>Email: info@lfs.co.ls</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="footer__copyright">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    <div class="footer__copyright__text">
+                        <!--<p>Copyright &copy; <script>document.write(new Date().getFullYear());</script> All rights reserved | This is made with <i class="fa fa-heart" aria-hidden="true"></i> by Khotso Serabele and <a href="https://colorlib.com" target="_blank">Colorlib</a></p>-->
+                    </div>
+                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                </div>
+                <div class="col-md-4">
+                    <div class="footer__copyright__social">
+                        <a href="#"><span class="social_facebook"></span></a>
+                        <a href="#" class="twitter"><span class="social_twitter"></span></a>
+                        <a href="#" class="vimeo"><span class="social_vimeo"></span></a>
+                        <a href="#" class="pinterest"><span class="social_pinterest"></span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer Section End -->
+
+    <!-- Search Begin -->
+    <div class="search-model">
+        <div class="h-100 d-flex align-items-center justify-content-center">
+            <div class="search-close-switch">+</div>
+            <form class="search-model-form">
+                <input type="text" id="search-input" placeholder="Search here.....">
+            </form>
+        </div>
+    </div>
+    <!-- Search End -->
+
+    <!-- Js Plugins -->
+    <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'js/jquery-ui.min.js' %}"></script>
+    <script src="{% static 'js/jquery.nice-select.min.js' %}"></script>
+    <script src="{% static 'js/jquery.slicknav.js' %}"></script>
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+
+</html>
