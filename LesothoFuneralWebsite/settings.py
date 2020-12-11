@@ -120,8 +120,6 @@ USE_TZ = True
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
-STATIC_URL = '/static/'
-
 LOGIN_REDIRECT_URL = 'index'
 
 LOGIN_URL = 'login'
@@ -129,6 +127,9 @@ LOGIN_URL = 'login'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_URL = '/static/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
